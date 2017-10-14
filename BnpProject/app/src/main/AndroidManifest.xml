@@ -26,6 +26,11 @@
             android:screenOrientation="portrait">
         </activity>
 
+        <activity android:name=".main.mainActivity"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait">
+        </activity>
     </application>
 
 </manifest>

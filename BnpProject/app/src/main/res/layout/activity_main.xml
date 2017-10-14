@@ -1,6 +1,233 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/darkGrey">
 
-</LinearLayout>
+    <RelativeLayout
+        android:id="@+id/titleBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/titulo"
+            android:textColor="@color/white"
+            android:textSize="@dimen/textTitleBar"
+            android:layout_centerHorizontal="true"
+            android:textStyle="bold"
+            android:layout_margin="10dp"/>
+
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/carousel"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_below="@+id/titleBar"
+        android:background="@color/softGrey"
+        android:src="@mipmap/ic_launcher"/>
+
+    <TextView
+        android:id="@+id/text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Seguros recomendados para ti!"
+        android:layout_below="@+id/carousel"
+        android:textColor="@color/primaryTextColor"
+        android:padding="10dp"
+        android:textSize="@dimen/textDefault"
+        android:background="@color/white"/>
+
+    <RelativeLayout
+        android:id="@+id/misSeguros"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/text"
+        android:layout_marginBottom="3dp">
+
+        <RelativeLayout
+            android:id="@+id/profileIcon"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/highlight_white">
+
+            <ImageView
+                android:id="@+id/perfil"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:tint="@color/darkGrey"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="5dp"
+                android:src="@drawable/ic_account_circle_black_48dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Hola, Nombre Apellido !"
+                android:layout_toEndOf="@id/perfil"
+                android:layout_centerVertical="true"
+                android:textSize="@dimen/textDefault"
+                android:layout_marginStart="5dp"
+                android:textStyle="bold"
+                android:textColor="@color/primaryTextColor"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/profileIcon"
+            android:background="@drawable/highlight_white">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/seguros"
+                android:layout_margin="10dp"
+                android:textSize="@dimen/textDefault"
+                android:layout_centerVertical="true"
+                android:textColor="@color/primaryTextColor"
+                />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:src="@drawable/ic_chevron_right_black_48dp"/>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/centralPanel"
+        android:layout_below="@+id/misSeguros"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:id="@+id/panel2"
+            android:layout_centerHorizontal="true"
+            android:layout_width="wrap_content"
+            android:paddingBottom="20dp"
+            android:paddingStart="40dp"
+            android:paddingEnd="40dp"
+            android:background="@drawable/highlight_white"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:id="@+id/image2"
+                android:layout_width="35dp"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:tint="@color/colorPrimary"
+                android:src="@drawable/ic_face_black_48dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/image2"
+                android:textColor="@color/colorPrimaryDark"
+                android:text="Mi perfil"
+                android:textStyle="bold"/>
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/panel1"
+            android:layout_toStartOf="@+id/panel2"
+            android:layout_marginEnd="2dp"
+            android:layout_alignBottom="@+id/panel2"
+            android:layout_width="match_parent"
+            android:background="@drawable/highlight_white"
+            android:layout_height="match_parent">
+            <ImageView
+                android:id="@+id/image1"
+                android:layout_width="35dp"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:tint="@color/colorPrimary"
+                android:src="@drawable/ic_markunread_mailbox_black_48dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/image1"
+                android:textColor="@color/colorPrimaryDark"
+                android:layout_centerHorizontal="true"
+                android:text="Notificaciones"
+                android:textStyle="bold"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/panel3"
+            android:layout_toEndOf="@+id/panel2"
+            android:layout_marginStart="2dp"
+            android:layout_alignBottom="@+id/panel2"
+            android:layout_width="match_parent"
+            android:background="@drawable/highlight_button"
+            android:layout_height="match_parent">
+            <ImageView
+                android:id="@+id/image3"
+                android:layout_width="35dp"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:tint="@color/white"
+                android:src="@drawable/ic_error_black_48dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/image3"
+                android:textColor="@color/white"
+                android:layout_centerHorizontal="true"
+                android:text="Alerta Siniestro"
+                android:textStyle="bold"/>
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/catalogPanel"
+        android:layout_below="@+id/centralPanel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        android:padding="10dp"
+        android:background="@drawable/highlight_white">
+
+        <ImageView
+            android:id="@+id/logoS"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:tint="@color/colorPrimary"
+            android:src="@drawable/ic_view_array_black_48dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/logoS"
+            android:text="Ver catálogo de seguros"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="5dp"
+            android:textSize="@dimen/textDefault"
+            android:textColor="@color/primaryTextColor"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:layout_marginTop="5dp"
+        android:layout_below="@+id/catalogPanel">
+        <ImageView
+            android:layout_marginTop="2dp"
+            android:layout_width="300dp"
+            android:layout_centerHorizontal="true"
+            android:layout_height="match_parent"
+            android:padding="10dp"
+            android:src="@drawable/horizontallogo"/>
+    </RelativeLayout>
+
+
+
+</RelativeLayout>

@@ -32,7 +32,7 @@ public class welcomeActivity extends Activity{
             public void onClick(View v) {
                 Intent intent = new Intent(welcomeActivity.this,loginActivity.class);
                 startActivity(intent);
-                finish();
+
             }
         });
 

@@ -6,6 +6,7 @@
     <color name="colorPrimaryDark">#00766c</color>
     <color name="primaryTextColor">#000000</color>
     <color name="softGrey">#f1f1f1</color>
+    <color name="darkGrey">#dedede</color>
 
     <color name="white">#FFFFFF</color>
     <!-- Cuando apretas un texto o botón con fondo blanco-->
