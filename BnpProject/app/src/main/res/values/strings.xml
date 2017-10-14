@@ -3,4 +3,10 @@
 
     <!-- Utils -->
     <string name="logoDescription">Imagen logo</string>
+    <!-- Mensaje reconocimiento de texto-->
+    <string name="reconocimiento">Escanear rostro para ingresar</string>
+    <!-- Mensaje para iniciar escaneo-->
+    <string name="escanear">Iniciar escaneo de rostro</string>
+    <!-- Titulo -->
+    <string name="titulo">BNP Paribas</string>
 </resources>

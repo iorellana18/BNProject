@@ -1,6 +1,7 @@
 package com.knd.hack.bnpproject.main;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -29,7 +30,9 @@ public class welcomeActivity extends Activity{
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getApplicationContext(),"Ian thread",Toast.LENGTH_LONG).show();
+                Intent intent = new Intent(welcomeActivity.this,loginActivity.class);
+                startActivity(intent);
+                finish();
             }
         });
 
