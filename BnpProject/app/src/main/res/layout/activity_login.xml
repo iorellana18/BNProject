@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/logo"
+        android:contentDescription="@string/logoDescription"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:src="@mipmap/ic_launcher"
+        android:layout_margin="20dp"/>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/textLogin"
+        android:layout_width="match_parent"
+        android:layout_below="@+id/logo"
+        android:layout_height="wrap_content">
+        <EditText
+            android:id="@+id/nombre"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="60dp"
+            android:layout_gravity="top"
+            android:inputType="textEmailAddress"
+            android:hint="Nombre de usuario"/>
+    </android.support.design.widget.TextInputLayout>
+
+
+
+</RelativeLayout>
