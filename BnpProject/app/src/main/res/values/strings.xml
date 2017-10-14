@@ -11,4 +11,10 @@
     <string name="titulo">BNP Paribas</string>
     <!-- Mis seguros -->
     <string name="seguros">Mis seguros</string>
+    <!-- Titulo denuncias -->
+    <string name="denuncias">Seleccione tipo de siniestro</string>
+    <!-- Bienvenida asistente-->
+    <string name="bienvenida">Bienvenido al asistente de seguro de accidente automovilístico</string>
+    <string name="bienvenida2">Siga las instrucciones para una rápida y eficaz denuncia</string>
+
 </resources>

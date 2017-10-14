@@ -25,7 +25,7 @@
     <ImageView
         android:id="@+id/carousel"
         android:layout_width="match_parent"
-        android:layout_height="150dp"
+        android:layout_height="170dp"
         android:layout_below="@+id/titleBar"
         android:background="@color/softGrey"
         android:src="@mipmap/ic_launcher"/>
