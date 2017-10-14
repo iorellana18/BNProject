@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+    <color name="colorPrimary">#26a69a</color>
+    <color name="primaryLightColor">#64d8cb</color>
+    <color name="colorPrimaryDark">#00766c</color>
+    <color name="primaryTextColor">#000000</color>
+
+    <color name="white">#FFFFFF</color>
+    <!-- Cuando apretas un texto o botón con fondo blanco-->
+    <color name="pressedDark">#e9e8e8</color>
+    <!-- Cuando apretas un texto o botón con fondo de color-->
+    <color name="colorPrimaryHighlight">#f7a3a4</color>
 </resources>
