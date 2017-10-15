@@ -2,4 +2,5 @@
 <resources>
     <dimen name="textDefault">16sp</dimen>
     <dimen name="textTitleBar">25sp</dimen>
+    <dimen name="textPatente">35sp</dimen>
 </resources>

@@ -4,5 +4,5 @@
         android:drawable="@color/pressedDark" /> <!-- pressed -->
     <item android:state_focused="true"
         android:drawable="@color/pressedDark" /> <!-- focused -->
-    <item android:drawable="@color/white" /> <!-- default -->
+    <item android:drawable="@color/softGrey" /> <!-- default -->
 </selector>

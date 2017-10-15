@@ -7,7 +7,7 @@ import android.os.Bundle;
 import android.view.Window;
 
 import com.knd.hack.bnpproject.R;
-import com.knd.hack.bnpproject.textRecognitionActivity;
+import com.knd.hack.bnpproject.recognition.textRecognitionActivity;
 
 import java.util.Timer;
 import java.util.TimerTask;
