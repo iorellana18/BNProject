@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/darkGrey">
@@ -22,20 +23,22 @@
 
     </RelativeLayout>
 
-    <ImageView
-        android:id="@+id/carousel"
+    <it.moondroid.coverflow.components.ui.containers.FeatureCoverFlow
+        android:id="@+id/coverflow"
         android:layout_width="match_parent"
-        android:layout_height="170dp"
+        android:layout_height="wrap_content"
+        app:coverHeight="100dp"
+        app:coverWidth="100dp"
+        app:spacing="0.6"
         android:layout_below="@+id/titleBar"
-        android:background="@color/softGrey"
-        android:src="@mipmap/ic_launcher"/>
+        android:layout_alignParentStart="true" />
 
     <TextView
         android:id="@+id/text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Seguros recomendados para ti!"
-        android:layout_below="@+id/carousel"
+        android:layout_below="@+id/coverflow"
         android:textColor="@color/primaryTextColor"
         android:padding="10dp"
         android:textSize="@dimen/textDefault"
