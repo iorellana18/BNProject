@@ -26,7 +26,7 @@
         android:gravity="center"/>
 
     <Button
-        android:id="@+id/login"
+        android:id="@+id/no"
         android:layout_width="170dp"
         android:layout_height="wrap_content"
         android:text="NO"
@@ -36,7 +36,7 @@
         android:background="@drawable/highlight_white"/>
 
     <Button
-        android:id="@+id/registro"
+        android:id="@+id/si"
         android:layout_width="170dp"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
