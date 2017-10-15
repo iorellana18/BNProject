@@ -143,14 +143,16 @@ public class recognition extends AppCompatActivity {
                                         textRecognizer.release();
                                         Intent intent = new Intent(recognition.this,confirmActivity.class);
                                         intent.putExtra("patente",patente);
-                                        startActivity(intent);
                                         finish();
+                                        startActivity(intent);
+
                                     } else if ((checkletter(pletters, patente.charAt(0))) && (checkletter(pletters, patente.charAt(1))) && (checkletter(pletters, patente.charAt(2))) && (checkletter(pletters, patente.charAt(3))) && (checknumber(pnumbers, patente.charAt(4))) && (checknumber(pnumbers, patente.charAt(5)))) {
                                         textRecognizer.release();
                                         Intent intent = new Intent(recognition.this,confirmActivity.class);
                                         intent.putExtra("patente",patente);
-                                        startActivity(intent);
                                         finish();
+                                        startActivity(intent);
+
                                     }
                                 }
 

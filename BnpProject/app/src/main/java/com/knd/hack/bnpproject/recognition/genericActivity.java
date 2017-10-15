@@ -1,12 +1,15 @@
 package com.knd.hack.bnpproject.recognition;
 
 import android.app.Activity;
+import android.content.ContentValues;
+import android.content.Context;
 import android.content.Intent;
 import android.hardware.Camera;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
+import android.provider.MediaStore.Video;
 import android.support.v4.content.FileProvider;
 import android.view.View;
 import android.widget.Button;
@@ -125,7 +128,9 @@ public class genericActivity extends Activity {
                         Toast.makeText(this, "Error al obtener video", Toast.LENGTH_SHORT).show();
                     }
                 }
+              addVideoToGallery(mCurrentVideoPath,getApplicationContext());
             }
+
         }
 
         private File createVideoFile() throws IOException {
@@ -152,14 +157,26 @@ public class genericActivity extends Activity {
             this.sendBroadcast(mediaScanIntent);
         }
 
-        private void galleryAddMov() {
-            Intent mediaScanIntent = new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE);
-            File f = new File(mCurrentVideoPath);
-            Uri contentUri = Uri.fromFile(f);
-            mediaScanIntent.setData(contentUri);
-            this.sendBroadcast(mediaScanIntent);
-        }
+    public static void addVideoToGallery(final String filePath, final Context context) {
 
+        ContentValues values = new ContentValues();
+
+        values.put(Video.Media.DATE_TAKEN, System.currentTimeMillis());
+        values.put(Video.Media.MIME_TYPE, "mp4");
+        values.put(MediaStore.MediaColumns.DATA, filePath);
+
+        context.getContentResolver().insert(Video.Media.EXTERNAL_CONTENT_URI, values);
+    }
+       /* private void galleryAddMov() {
+           // Intent mediaScanIntent = new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE);
+
+            File f = new File(mCurrentVideoPath);
+            sendBroadcast(new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE, Uri.fromFile(f)));
+           // Uri contentUri = Uri.fromFile(f);
+            //mediaScanIntent.setData(contentUri);
+            //this.sendBroadcast(mediaScanIntent);
+        }
+        */
         public  void selectPictures(){
             try{
                 // TODO access the 4 pictures to send
