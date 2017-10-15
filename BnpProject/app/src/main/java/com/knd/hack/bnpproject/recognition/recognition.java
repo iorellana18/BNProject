@@ -17,6 +17,7 @@ import com.google.android.gms.vision.CameraSource;
 import com.google.android.gms.vision.Detector;
 import com.google.android.gms.vision.text.TextBlock;
 import com.google.android.gms.vision.text.TextRecognizer;
+import com.knd.hack.bnpproject.EDA.Usuario;
 import com.knd.hack.bnpproject.R;
 
 import java.io.IOException;
@@ -77,6 +78,8 @@ public class recognition extends AppCompatActivity {
 
         cameraView = (SurfaceView) findViewById(R.id.surface_view);
         textView = (TextView) findViewById(R.id.text_view);
+
+        final Usuario user = (Usuario)getIntent().getSerializableExtra("user");
 
         final TextRecognizer textRecognizer = new TextRecognizer.Builder(getApplicationContext()).build();
         if (!textRecognizer.isOperational()) {
@@ -143,6 +146,7 @@ public class recognition extends AppCompatActivity {
                                         textRecognizer.release();
                                         Intent intent = new Intent(recognition.this,confirmActivity.class);
                                         intent.putExtra("patente",patente);
+                                        intent.putExtra("user",user);
                                         finish();
                                         startActivity(intent);
 
@@ -150,6 +154,7 @@ public class recognition extends AppCompatActivity {
                                         textRecognizer.release();
                                         Intent intent = new Intent(recognition.this,confirmActivity.class);
                                         intent.putExtra("patente",patente);
+                                        intent.putExtra("user",user);
                                         finish();
                                         startActivity(intent);
 

@@ -16,6 +16,7 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.knd.hack.bnpproject.EDA.Usuario;
 import com.knd.hack.bnpproject.R;
 import com.knd.hack.bnpproject.streamVideoActivity;
 
@@ -51,6 +52,7 @@ public class genericActivity extends Activity {
 
         text.setText("Ahora es recomendable que grabe un corto video del estado del auto");
         detectar.setText("Grabar");
+        final Usuario user = (Usuario)getIntent().getSerializableExtra("user");
 
         detectar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -61,6 +63,7 @@ public class genericActivity extends Activity {
                     flag = false;
                 }else{
                     Intent intent = new Intent(getApplicationContext(),streamVideoActivity.class);
+                    intent.putExtra("user",user);
                     startActivity(intent);
                     finish();
                 }

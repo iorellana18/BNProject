@@ -18,6 +18,7 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
+import com.knd.hack.bnpproject.EDA.Usuario;
 import com.knd.hack.bnpproject.R;
 
 import java.io.File;
@@ -54,11 +55,14 @@ public class loginActivity extends Activity {
         perfil = (ImageView)findViewById(R.id.logo);
         perfil2 = (ImageView)findViewById(R.id.img);
 
+        final Usuario user = (Usuario)getIntent().getSerializableExtra("user");
+
         escanear.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if(!flag) {
                     Intent intent = new Intent(loginActivity.this, mainActivity.class);
+                    intent.putExtra("user",user);
                     startActivity(intent);
                     finish();
                 }else{

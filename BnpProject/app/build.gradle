@@ -17,6 +17,13 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    packagingOptions {
+        exclude 'META-INF/DEPENDENCIES'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/NOTICE.txt'
+    }
 }
 
 dependencies {
@@ -32,6 +39,7 @@ dependencies {
     compile 'com.skype.android.skype-android-sdk:MobileSdk:1.0.0.0'
     compile 'com.google.firebase:firebase-storage:11.0.4'
     compile 'com.google.firebase:firebase-database:11.0.4'
+    compile 'com.firebase:firebase-client-android:2.5.2+'
     compile 'de.hdodenhof:circleimageview:1.3.0'
 }
 apply plugin: 'com.google.gms.google-services'

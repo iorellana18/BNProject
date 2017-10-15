@@ -13,6 +13,7 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.knd.hack.bnpproject.EDA.Usuario;
 import com.knd.hack.bnpproject.formulario.formActivity;
 
 import org.w3c.dom.Text;
@@ -48,11 +49,13 @@ public class streamVideoActivity extends Activity {
         text.setText("Desea realizar una videollamada con nuestros agentes para mejorar su experiencia?");
 
         chargueAvailableAssistant();
+        final Usuario user = (Usuario)getIntent().getSerializableExtra("user");
 
         no.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(streamVideoActivity.this,formActivity.class);
+                intent.putExtra("user",user);
                 startActivity(intent);
                 finish();
             }

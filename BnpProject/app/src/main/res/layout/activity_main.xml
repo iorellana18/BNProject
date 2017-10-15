@@ -45,9 +45,8 @@
         android:id="@+id/misSeguros"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
         android:layout_below="@+id/text"
-        android:layout_marginBottom="3dp">
+        android:layout_alignParentStart="true">
 
         <RelativeLayout
             android:id="@+id/profileIcon"
@@ -65,6 +64,7 @@
                 android:src="@drawable/ic_account_circle_black_48dp"/>
 
             <TextView
+                android:id="@+id/nombre"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Hola, Nombre Apellido !"

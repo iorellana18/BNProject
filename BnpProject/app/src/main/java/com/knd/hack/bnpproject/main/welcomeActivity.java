@@ -30,7 +30,7 @@ public class welcomeActivity extends Activity{
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(welcomeActivity.this,loginActivity.class);
+                Intent intent = new Intent(welcomeActivity.this,loginMaskActivity.class);
                 startActivity(intent);
 
             }

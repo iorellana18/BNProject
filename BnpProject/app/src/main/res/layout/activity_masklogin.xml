@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+
+
+    <ImageView
+        android:id="@+id/LoginImage"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_margin="60dp"
+        android:layout_gravity="center"
+        android:src="@drawable/logo"
+        />
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/textLogin"
+        android:layout_width="match_parent"
+
+        android:layout_below="@+id/LoginImage"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/nombre"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="60dp"
+            android:hint="Nombre de usuario"
+            android:inputType="textEmailAddress" />
+    </android.support.design.widget.TextInputLayout>
+
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/textPass"
+        android:layout_width="match_parent"
+        android:layout_below="@+id/textLogin"
+        android:layout_height="wrap_content">
+        <EditText
+            android:id="@+id/pass"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="50dp"
+            android:inputType="textPassword"
+            android:layout_below="@+id/textLogin"
+            android:hint="Contraseña"/>
+
+    </android.support.design.widget.TextInputLayout>
+    <Button
+        android:id="@+id/LoginButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_margin="30dp"
+        android:text="Login"
+        android:layout_below="@+id/textPass"
+        android:textColor="@color/white"
+        android:background="@drawable/highlight_button"
+        android:clickable="true"/>
+
+    <TextView
+        android:id="@+id/Remember"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/LoginButton"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/colorPrimaryDark"
+        android:clickable="true"
+        android:padding="10dp"
+        android:background="@drawable/highlight_white"
+        android:text="¿Aún no tiene una cuenta? Regístrese!"/>
+
+</RelativeLayout>

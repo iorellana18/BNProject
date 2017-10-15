@@ -10,7 +10,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.knd.hack.bnpproject.EDA.Usuario;
 import com.knd.hack.bnpproject.R;
+import com.knd.hack.bnpproject.finalClass;
 import com.knd.hack.bnpproject.main.mainActivity;
 
 import java.util.ArrayList;
@@ -34,6 +36,7 @@ public class formActivity extends AppCompatActivity {
 
         voiceInput = (TextView) findViewById(R.id.voiceInput);
         speakButton = (TextView) findViewById(R.id.btnSpeak);
+        final Usuario user = (Usuario)getIntent().getSerializableExtra("user");
 
         speakButton.setOnClickListener(new View.OnClickListener() {
 
@@ -42,9 +45,10 @@ public class formActivity extends AppCompatActivity {
                 if(flag) {
                     askSpeechInput();
                     speakButton.setText("finalizar");
-                    flag=true;
+                    flag=false;
                 }else{
-                    Intent intent = new Intent(formActivity.this,mainActivity.class);
+                    Intent intent = new Intent(formActivity.this,finalClass.class);
+                    intent.putExtra("user",user);
                     startActivity(intent);
                     finish();
                 }
@@ -61,7 +65,7 @@ public class formActivity extends AppCompatActivity {
                 RecognizerIntent.LANGUAGE_MODEL_FREE_FORM);
         intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE, "es-ES");
         intent.putExtra(RecognizerIntent.EXTRA_PROMPT,
-                "Hi speak something");
+                "Cuentanos tu caso");
         try {
             startActivityForResult(intent, REQ_CODE_SPEECH_INPUT);
         } catch (ActivityNotFoundException a) {

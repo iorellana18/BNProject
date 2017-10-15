@@ -6,6 +6,7 @@ import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.view.Window;
 
+import com.knd.hack.bnpproject.EDA.Usuario;
 import com.knd.hack.bnpproject.R;
 
 import java.util.Timer;
@@ -27,12 +28,14 @@ public class asistenteActivity extends Activity{
 
         overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
         setContentView(R.layout.activity_asistente);
+        final Usuario user = (Usuario)getIntent().getSerializableExtra("user");
 
         TimerTask task = new TimerTask() {
             @Override
             public void run() {
                 Intent mainIntent = new Intent().setClass(
                         asistenteActivity.this, asistenteActivity2.class);
+                mainIntent.putExtra("user",user);
                 startActivity(mainIntent);
 
             }

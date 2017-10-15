@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.knd.hack.bnpproject.EDA.Usuario;
 import com.knd.hack.bnpproject.R;
 
 /**
@@ -26,11 +27,13 @@ public class confirmActivity extends Activity {
         patente = (TextView)findViewById(R.id.patente);
         si = (Button)findViewById(R.id.si);
         no = (Button)findViewById(R.id.no);
+        final Usuario user = (Usuario)getIntent().getSerializableExtra("user");
 
         si.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(confirmActivity.this,genericActivity.class);
+                intent.putExtra("user",user);
                 startActivity(intent);
                 finish();
             }
@@ -40,6 +43,7 @@ public class confirmActivity extends Activity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(confirmActivity.this,recognition.class);
+                intent.putExtra("user",user);
                 startActivity(intent);
                 finish();
             }

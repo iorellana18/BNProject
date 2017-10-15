@@ -8,6 +8,7 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.knd.hack.bnpproject.EDA.Seguro;
+import com.knd.hack.bnpproject.EDA.Usuario;
 import com.knd.hack.bnpproject.R;
 
 import java.util.ArrayList;
@@ -32,12 +33,14 @@ public class listaDenunciasActivity extends Activity {
         adapter = new siniestrosAdapter(getApplicationContext(),seguros);
         lista.setAdapter(adapter);
 
+        final Usuario user = (Usuario)getIntent().getSerializableExtra("user");
 
         lista.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 Intent intent = new Intent(listaDenunciasActivity.this, asistenteActivity.class);
                 intent.putExtra("seguro",seguros.get(i).getTitulo());
+                intent.putExtra("user",user);
                 startActivity(intent);
                 overridePendingTransition(R.anim.fadein, R.anim.fadeout);
             }

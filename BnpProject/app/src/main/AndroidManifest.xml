@@ -104,6 +104,15 @@
             android:name=".formulario.formActivity"
             android:label="@string/title_activity_video_call"
             android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
+            android:name=".main.loginMaskActivity"
+            android:label="@string/title_activity_video_call"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+
+        <activity
+            android:name=".finalClass"
+            android:label="@string/title_activity_video_call"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>
