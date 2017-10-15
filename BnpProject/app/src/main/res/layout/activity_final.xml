@@ -1,12 +1,258 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/white">
 
-    <TextView
-        android:id="@+id/text"
+
+    <RelativeLayout
+        android:id="@+id/datosContent"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="hola"/>
+        android:layout_height="50dp"
+        android:background="@color/colorPrimary">
 
+
+        <TextView
+            android:id="@+id/SearchProfile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top"
+            android:inputType="text"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:layout_centerHorizontal="true"
+            android:background="@color/colorPrimary"
+            android:text="Información enviada"/>
+    </RelativeLayout>
+
+
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@color/white"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true">
+        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:orientation="vertical" android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white">
+
+            <ImageView
+                android:id="@+id/icono"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/logo"
+                android:layout_marginTop="17dp"
+                android:layout_marginLeft="17dp"/>
+
+            <TextView
+                android:id="@+id/nombre"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nombre"
+                android:textStyle="bold"
+                android:textColor="@color/primaryTextColor"
+                android:textSize="@dimen/textTitleBar"
+                android:layout_alignBaseline="@+id/apellido"
+                android:layout_alignBottom="@+id/apellido"
+                android:layout_alignStart="@+id/rut" />
+
+            <TextView
+                android:id="@+id/apellido"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/nombre"
+                android:text="Apellido"
+                android:textStyle="bold"
+                android:textColor="@color/primaryTextColor"
+                android:textSize="@dimen/textTitleBar"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="5dp"
+                />
+
+            <TextView
+                android:id="@+id/rut"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Prevision"
+                android:layout_toRightOf="@+id/icono"
+                android:layout_marginStart="15dp"
+                android:layout_below="@+id/nombre"/>
+            <TextView
+                android:id="@+id/fecha"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Solicitado el 15/10/2017"
+                android:layout_toRightOf="@+id/icono"
+                android:layout_marginLeft="15dp"
+                android:layout_below="@+id/rut"
+                android:textSize="12sp"/>
+
+
+            <RelativeLayout
+                android:id="@+id/motivoContent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/fecha">
+
+                <TextView
+                    android:id="@+id/mot"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Motivo de la solicitud:"
+                    android:layout_marginTop="20dp"
+                    android:textStyle="bold"
+                    android:layout_marginStart="16dp"
+                    android:textColor="@color/colorPrimary"/>
+
+                <TextView
+                    android:id="@+id/motivo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="Algun motivo"
+                    android:layout_below="@+id/mot"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginBottom="5dp"
+                    android:textColor="@color/primaryTextColor"/>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/Second"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/motivoContent"
+                android:background="@drawable/custom_fit">
+
+
+                <TextView
+                    android:id="@+id/dir"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Dirección:"
+                    android:layout_marginTop="5dp"
+                    android:textStyle="bold"
+                    android:layout_marginStart="16dp"
+                    android:textColor="@color/colorPrimary"/>
+
+                <TextView
+                    android:id="@+id/direccion"
+                    android:layout_marginTop="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Sc (Andina) Inc. - Av. Libertador Bdo. O'Higgins 136, Santiago, Región Metropolitana"
+                    android:layout_below="@+id/dir"
+                    android:layout_marginStart="16dp"
+                    android:textColor="@color/primaryTextColor"/>
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/Third"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/Second"
+                android:layout_marginBottom="10dp">
+
+
+                <TextView
+                    android:id="@+id/p1"
+                    android:textColor="@color/colorPrimary"
+                    android:layout_marginTop="5dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Patente Cliente"
+                    android:textStyle="bold"
+                    android:layout_marginStart="16dp"/>
+
+                <TextView
+                    android:id="@+id/patente"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Si"
+                    android:layout_marginRight="20dp"
+                    android:textColor="@color/primaryTextColor"
+                    android:layout_below="@+id/p1"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignStart="@+id/p1" />
+
+
+                <RelativeLayout
+                    android:id="@+id/textPrevision"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/patente"
+                    android:background="@drawable/custom_fit">
+                    <TextView
+                        android:id="@+id/p2"
+                        android:layout_marginTop="5dp"
+                        android:textColor="@color/colorPrimary"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Patente tercero :"
+                        android:textStyle="bold"
+                        android:layout_marginStart="16dp"/>
+
+                    <TextView
+                        android:id="@+id/patente2"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Fonasa"
+                        android:layout_below="@+id/p2"
+                        android:layout_marginStart="16dp"
+                        android:textColor="@color/primaryTextColor"/>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/textCorreo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/textPrevision"
+                    android:background="@drawable/custom_fit">
+                    <TextView
+                        android:id="@+id/p3"
+                        android:layout_marginTop="5dp"
+                        android:textColor="@color/colorPrimary"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Correo"
+                        android:textStyle="bold"
+                        android:layout_marginStart="16dp"/>
+
+                    <TextView
+                        android:id="@+id/coreo"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Fonasa"
+                        android:layout_below="@+id/p3"
+                        android:layout_marginStart="16dp"
+                        android:textColor="@color/primaryTextColor"/>
+
+                </RelativeLayout>
+
+
+            </RelativeLayout>
+
+
+        </RelativeLayout>
+    </ScrollView>
+
+
+    <Button
+        android:id="@+id/acceptButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/highlight_button"
+        android:layout_alignParentBottom="true"
+        android:clickable="true"
+        android:text="Aceptar"
+        android:textColor="@color/white"/>
 </RelativeLayout>

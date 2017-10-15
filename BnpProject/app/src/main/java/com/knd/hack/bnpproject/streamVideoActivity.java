@@ -51,11 +51,14 @@ public class streamVideoActivity extends Activity {
         chargueAvailableAssistant();
         final Usuario user = (Usuario)getIntent().getSerializableExtra("user");
 
+        final String patente = getIntent().getStringExtra("patente");
+
         no.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(streamVideoActivity.this,formActivity.class);
                 intent.putExtra("user",user);
+                intent.putExtra("patente",patente);
                 startActivity(intent);
                 finish();
             }
@@ -75,6 +78,7 @@ public class streamVideoActivity extends Activity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(streamVideoActivity.this,formActivity.class);
+                intent.putExtra("patente",patente);
                 startActivity(intent);
                 finish();
             }

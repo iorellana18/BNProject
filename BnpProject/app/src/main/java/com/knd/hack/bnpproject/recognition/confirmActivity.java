@@ -28,12 +28,14 @@ public class confirmActivity extends Activity {
         si = (Button)findViewById(R.id.si);
         no = (Button)findViewById(R.id.no);
         final Usuario user = (Usuario)getIntent().getSerializableExtra("user");
+        final String patente2 = getIntent().getStringExtra("patente");
 
         si.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(confirmActivity.this,genericActivity.class);
                 intent.putExtra("user",user);
+                intent.putExtra("patente",patente2);
                 startActivity(intent);
                 finish();
             }
@@ -43,7 +45,7 @@ public class confirmActivity extends Activity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(confirmActivity.this,recognition.class);
-                intent.putExtra("user",user);
+                intent.putExtra("user",user);intent.putExtra("patente",patente2);
                 startActivity(intent);
                 finish();
             }

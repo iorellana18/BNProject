@@ -54,6 +54,8 @@ public class genericActivity extends Activity {
         detectar.setText("Grabar");
         final Usuario user = (Usuario)getIntent().getSerializableExtra("user");
 
+        final String patente = getIntent().getStringExtra("patente");
+
         detectar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -64,6 +66,7 @@ public class genericActivity extends Activity {
                 }else{
                     Intent intent = new Intent(getApplicationContext(),streamVideoActivity.class);
                     intent.putExtra("user",user);
+                    intent.putExtra("patente",patente);
                     startActivity(intent);
                     finish();
                 }

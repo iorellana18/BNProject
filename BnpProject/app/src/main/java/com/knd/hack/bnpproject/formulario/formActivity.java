@@ -38,6 +38,8 @@ public class formActivity extends AppCompatActivity {
         speakButton = (TextView) findViewById(R.id.btnSpeak);
         final Usuario user = (Usuario)getIntent().getSerializableExtra("user");
 
+
+        final String patente = getIntent().getStringExtra("patente");
         speakButton.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -49,6 +51,8 @@ public class formActivity extends AppCompatActivity {
                 }else{
                     Intent intent = new Intent(formActivity.this,finalClass.class);
                     intent.putExtra("user",user);
+                    intent.putExtra("patente",patente);
+                    intent.putExtra("voice",voiceInput.getText());
                     startActivity(intent);
                     finish();
                 }
