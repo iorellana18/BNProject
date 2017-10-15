@@ -40,6 +40,8 @@ public class welcomeActivity extends Activity{
             @Override
             public void onClick(View v) {
                 Toast.makeText(getApplicationContext(),"Isra thread",Toast.LENGTH_LONG).show();
+                Intent intent = new Intent(welcomeActivity.this, videoCallActivity.class);
+                startActivity(intent);
             }
         });
 

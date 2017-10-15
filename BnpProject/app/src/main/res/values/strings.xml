@@ -20,5 +20,6 @@
 
     <!--confirmación-->
     <string name="confirmacion">¿Es correcta la patente?</string>
+    <string name="title_activity_video_call">VideoCall</string>
 
 </resources>
