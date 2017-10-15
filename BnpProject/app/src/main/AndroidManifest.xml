@@ -8,6 +8,8 @@
         android:name="android.hardware.camera"
         android:required="true" />
     <uses-feature android:name="android.hardware.camera.autofocus" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
 
     <!-- Permission for SAVE an GET image an Video resources -->
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
@@ -92,6 +94,14 @@
             android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity
             android:name=".main.videoCallActivity"
+            android:label="@string/title_activity_video_call"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
+            android:name=".streamVideoActivity"
+            android:label="@string/title_activity_video_call"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
+            android:name=".formulario.formActivity"
             android:label="@string/title_activity_video_call"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>

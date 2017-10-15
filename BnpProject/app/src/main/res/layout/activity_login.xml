@@ -32,16 +32,34 @@
         android:tint="@color/colorPrimary"
         android:layout_margin="20dp"/>
 
+    <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/img"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginBottom="4dp"
+        android:layout_marginLeft="4dp"
+        android:scaleType="centerCrop"
+        android:layout_marginRight="4dp"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/ic_account_circle_black_48dp"
+        android:backgroundTint="@color/softGrey"
+        app:border_color="@color/white"
+        android:layout_centerHorizontal="true"
+        android:visibility="gone"
+        android:layout_below="@+id/titleBar"
+        app:border_width="1dp" />
+
 
     <TextView
         android:id="@+id/text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/reconocimiento"
-        android:layout_below="@+id/logo"
+        android:layout_centerInParent="true"
         android:layout_centerHorizontal="true"
         android:textColor="@color/colorPrimaryDark"
         android:textSize="@dimen/textDefault"/>
+
 
     <Button
         android:id="@+id/escanear"
@@ -55,5 +73,14 @@
         android:textStyle="bold"
         android:padding="10dp"
         android:background="@drawable/highlight_button"/>
+
+    <Button
+        android:id="@+id/chantar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/escanear"
+        android:layout_centerHorizontal="true"
+        android:text="Chantar"
+        android:visibility="gone"/>
 
 </RelativeLayout>

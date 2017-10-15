@@ -1,6 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-</LinearLayout>
+    <TextView
+        android:id="@+id/text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/paso1"
+        android:gravity="center"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="50dp"
+        android:textSize="@dimen/textTitleBar"
+        android:textColor="@color/primaryTextColor"/>
+
+
+    <Button
+        android:id="@+id/no"
+        android:layout_width="170dp"
+        android:layout_height="wrap_content"
+        android:text="NO"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="10dp"
+        android:textColor="@color/colorPrimary"
+        android:background="@drawable/highlight_white"/>
+
+    <Button
+        android:id="@+id/si"
+        android:layout_width="170dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_margin="10dp"
+        android:text="SI"
+        android:textColor="@color/white"
+        android:background="@drawable/highlight_button"
+        />
+
+    <Button
+        android:id="@+id/continuar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="Continuar"
+        android:background="@drawable/highlight_button"
+        android:textColor="@color/white"
+        android:layout_margin="16dp"
+        android:visibility="gone"/>
+
+</RelativeLayout>

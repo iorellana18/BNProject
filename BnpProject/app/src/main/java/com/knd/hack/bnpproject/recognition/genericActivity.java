@@ -17,6 +17,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.knd.hack.bnpproject.R;
+import com.knd.hack.bnpproject.streamVideoActivity;
 
 import java.io.File;
 import java.io.IOException;
@@ -38,11 +39,13 @@ public class genericActivity extends Activity {
 
     private Camera camera = null;
 
+    private boolean flag;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_textrecognition);
-
+        flag = true;
         detectar = (Button) findViewById(R.id.detectar);
         text = (TextView) findViewById(R.id.text);
 
@@ -52,7 +55,15 @@ public class genericActivity extends Activity {
         detectar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                dispatchTakeVideoIntent();
+                if(flag) {
+                    dispatchTakeVideoIntent();
+                    detectar.setText("Continuar");
+                    flag = false;
+                }else{
+                    Intent intent = new Intent(getApplicationContext(),streamVideoActivity.class);
+                    startActivity(intent);
+                    finish();
+                }
             }
         });
     }

@@ -1,0 +1,73 @@
+{
+  "project_info": {
+    "project_number": "776140901644",
+    "firebase_url": "https://hackea3-476ce.firebaseio.com",
+    "project_id": "hackea3-476ce",
+    "storage_bucket": "hackea3-476ce.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:776140901644:android:48c15980bf4fd104",
+        "android_client_info": {
+          "package_name": "com.firebasexample"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "776140901644-4ukvm81i17h62mipgfefkoiksbdb9oq0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBW7bqZKlTA8a80BPy_cqGSRF8Vx-0vJDw"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:776140901644:android:38b62d2614438e72",
+        "android_client_info": {
+          "package_name": "com.knd.hack.bnpproject"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "776140901644-4ukvm81i17h62mipgfefkoiksbdb9oq0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBW7bqZKlTA8a80BPy_cqGSRF8Vx-0vJDw"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
