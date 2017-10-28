@@ -42,8 +42,8 @@ public class videoCallActivity extends AppCompatActivity {
     }
 
     public void chargueAvailableAssistant(){
-        skypeNames.add("hikarusmusic");
-        skypeNames.add("ian.orellana1");
+        skypeNames.add("israel.martinez_12");
+        skypeNames.add("martinez.assitant001");
     }
 
     public String getAvailableAssistant(){

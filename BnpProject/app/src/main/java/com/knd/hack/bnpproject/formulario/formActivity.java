@@ -46,7 +46,7 @@ public class formActivity extends AppCompatActivity {
             public void onClick(View v) {
                 if(flag) {
                     askSpeechInput();
-                    speakButton.setText("finalizar");
+                    speakButton.setText("Finalizar");
                     flag=false;
                 }else{
                     Intent intent = new Intent(formActivity.this,finalClass.class);

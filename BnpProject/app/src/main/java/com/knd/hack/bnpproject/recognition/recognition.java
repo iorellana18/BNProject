@@ -34,9 +34,11 @@ public class recognition extends AppCompatActivity {
     TextView textView;
     CameraSource cameraSource;
     final int RequestCameraPermissionID = 1001;
-    String letters ="[A-Z&&[^aeiouAEIOU]]";
+    String allletters = "[A-Z]";
+    String lettersnovowals ="[A-Z&&[^AEIOU]]";
     String numbers ="[0-9]";
-    Pattern pletters = Pattern.compile(letters);
+    Pattern pallletters = Pattern.compile(allletters);
+    Pattern plettersnovowals = Pattern.compile(lettersnovowals);
     Pattern pnumbers = Pattern.compile(numbers);
 
     public boolean checkletter(Pattern patron,char letra){
@@ -140,9 +142,11 @@ public class recognition extends AppCompatActivity {
                                     Log.e("Palabra",String.valueOf(stringBuilder));
                                 }
                                 textView.setText(stringBuilder.toString());
-                                String patente = stringBuilder.toString();
+                                String prepatente1 = stringBuilder.toString();
+                                String prepatente = prepatente1.replace(" ","");
+                                String patente = prepatente.replace("-","");
                                 if(patente.length()==6) {
-                                    if ((checkletter(pletters, patente.charAt(0))) && (checkletter(pletters, patente.charAt(1))) && (checknumber(pnumbers, patente.charAt(2))) && (checknumber(pnumbers, patente.charAt(3))) && (checknumber(pnumbers, patente.charAt(4))) && (checknumber(pnumbers, patente.charAt(5)))) {
+                                    if ((checkletter(pallletters, patente.charAt(0))) && (checkletter(pallletters, patente.charAt(1))) && (checknumber(pnumbers, patente.charAt(2))) && (checknumber(pnumbers, patente.charAt(3))) && (checknumber(pnumbers, patente.charAt(4))) && (checknumber(pnumbers, patente.charAt(5)))) {
                                         textRecognizer.release();
                                         Intent intent = new Intent(recognition.this,confirmActivity.class);
                                         intent.putExtra("patente",patente);
@@ -150,7 +154,7 @@ public class recognition extends AppCompatActivity {
                                         finish();
                                         startActivity(intent);
 
-                                    } else if ((checkletter(pletters, patente.charAt(0))) && (checkletter(pletters, patente.charAt(1))) && (checkletter(pletters, patente.charAt(2))) && (checkletter(pletters, patente.charAt(3))) && (checknumber(pnumbers, patente.charAt(4))) && (checknumber(pnumbers, patente.charAt(5)))) {
+                                    } else if ((checkletter(plettersnovowals, patente.charAt(0))) && (checkletter(plettersnovowals, patente.charAt(1))) && (checkletter(plettersnovowals, patente.charAt(2))) && (checkletter(plettersnovowals, patente.charAt(3))) && (checknumber(pnumbers, patente.charAt(4))) && (checknumber(pnumbers, patente.charAt(5)))) {
                                         textRecognizer.release();
                                         Intent intent = new Intent(recognition.this,confirmActivity.class);
                                         intent.putExtra("patente",patente);

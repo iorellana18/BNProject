@@ -10,7 +10,7 @@
 
     <color name="white">#FFFFFF</color>
     <!-- Cuando apretas un texto o botón con fondo blanco-->
-    <color name="pressedDark">#e9e8e8</color>
+    <color name="pressedDark">#c9c7c7</color>
     <!-- Cuando apretas un texto o botón con fondo de color-->
     <color name="colorPrimaryHighlight">#f7a3a4</color>
 </resources>

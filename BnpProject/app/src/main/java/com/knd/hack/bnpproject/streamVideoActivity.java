@@ -86,8 +86,9 @@ public class streamVideoActivity extends Activity {
     }
 
     public void chargueAvailableAssistant(){
-        skypeNames.add("hikarusmusic");
         skypeNames.add("ian.orellana1");
+        //skypeNames.add("hikarusmusic");
+        //skypeNames.add("martinez.assitant001");
     }
 
     public String getAvailableAssistant(){
