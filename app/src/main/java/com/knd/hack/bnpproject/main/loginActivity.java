@@ -32,9 +32,9 @@ import java.io.OutputStream;
 
 public class loginActivity extends Activity {
 
-    Button escanear;
     ImageView perfil;
     ImageView perfil2;
+    Button escanearButton;
     private ProgressDialog mProgress;
     private Uri mImageUri = null;
     private static final  int GALLERY_REQUEST =1;
@@ -50,31 +50,30 @@ public class loginActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
+
+    }
+
+
+    public void escanear(View view){
         flag = true;
-        escanear = (Button)findViewById(R.id.escanear);
         perfil = (ImageView)findViewById(R.id.logo);
         perfil2 = (ImageView)findViewById(R.id.img);
+        escanearButton = (Button)findViewById(R.id.escanear);
 
         final Usuario user = (Usuario)getIntent().getSerializableExtra("user");
+        if(!flag) {
+            Intent intent = new Intent(loginActivity.this, mainActivity.class);
+            intent.putExtra("user",user);
+            startActivity(intent);
+            finish();
+        }else{
+            flag=false;
+            Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+            startActivityForResult(intent,0);
+            escanearButton.setText("Ingresar");
+        }
 
-        escanear.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if(!flag) {
-                    Intent intent = new Intent(loginActivity.this, mainActivity.class);
-                    intent.putExtra("user",user);
-                    startActivity(intent);
-                    finish();
-                }else{
-                    flag=false;
-                    Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-                    startActivityForResult(intent,0);
-                    escanear.setText("Ingresar");
-                }
-                /*
-
-                */
-        }});
     }
 
 
@@ -110,6 +109,7 @@ public class loginActivity extends Activity {
         }catch (FileNotFoundException fnfe){}
 
     }
+
 
 }
 

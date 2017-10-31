@@ -25,7 +25,6 @@ import com.knd.hack.bnpproject.R;
  */
 
 public class loginMaskActivity extends Activity {
-    Button Login;
     EditText correo;
     EditText pass;
     private ProgressDialog mDialog;
@@ -33,49 +32,43 @@ public class loginMaskActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_masklogin);
+
+
+    }
+
+    public void login(View view){
         Firebase.setAndroidContext(this);
 
-        Login = (Button) findViewById(R.id.LoginButton);
         correo = (EditText)findViewById(R.id.nombre);
         pass = (EditText)findViewById(R.id.pass);
 
-
-        Login.setOnClickListener(new View.OnClickListener() {
+        Firebase ref = new Firebase("https://hackea3-476ce.firebaseio.com/users");
+        ref.addValueEventListener(new ValueEventListener() {
             @Override
-            public void onClick(View view) {
-
-                Firebase ref = new Firebase("https://hackea3-476ce.firebaseio.com/users");
-                ref.addValueEventListener(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(DataSnapshot snapshot) {
-                        boolean flag=false;
-                        Usuario user = new Usuario();
-                        for (DataSnapshot postSnapshot: snapshot.getChildren()) {
-                            user = postSnapshot.getValue(Usuario.class);
-                            if(user.getCorreo().matches(correo.getText().toString())) {
-                                flag = true;
-                                break;
-                            }
-                        }
-                        if(flag){
-                            Intent intent = new Intent(loginMaskActivity.this,loginActivity.class);
-                            intent.putExtra("user",user);
-                            startActivity(intent);
-                            finish();
-                        }else{
-                            Toast.makeText(getApplicationContext(),"Correo o contraseña incorrectos", Toast.LENGTH_SHORT).show();
-
-                        }
+            public void onDataChange(DataSnapshot snapshot) {
+                boolean flag=false;
+                Usuario user = new Usuario();
+                for (DataSnapshot postSnapshot: snapshot.getChildren()) {
+                    user = postSnapshot.getValue(Usuario.class);
+                    if(user.getCorreo().matches(correo.getText().toString())) {
+                        flag = true;
+                        break;
                     }
+                }
+                if(flag){
+                    Intent intent = new Intent(loginMaskActivity.this,loginActivity.class);
+                    intent.putExtra("user",user);
+                    startActivity(intent);
+                    finish();
+                }else{
+                    Toast.makeText(getApplicationContext(),"Correo o contraseña incorrectos", Toast.LENGTH_SHORT).show();
 
-                    @Override
-                    public void onCancelled(FirebaseError firebaseError) {
-                        System.out.println("The read failed: " + firebaseError.getMessage());
-                    }
-                });
+                }
+            }
 
-
-
+            @Override
+            public void onCancelled(FirebaseError firebaseError) {
+                System.out.println("The read failed: " + firebaseError.getMessage());
             }
         });
     }

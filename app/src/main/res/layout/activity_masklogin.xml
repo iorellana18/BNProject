@@ -1,16 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white">
+    android:background="@color/white"
+    tools:context=".main.loginMaskActivity">
 
 
 
     <ImageView
         android:id="@+id/LoginImage"
         android:layout_width="match_parent"
-        android:layout_height="150dp"
-        android:layout_margin="60dp"
+        android:layout_height="250dp"
+        android:layout_margin="30dp"
         android:layout_gravity="center"
         android:src="@drawable/logo"
         />
@@ -18,8 +21,7 @@
     <android.support.design.widget.TextInputLayout
         android:id="@+id/textLogin"
         android:layout_width="match_parent"
-
-        android:layout_below="@+id/LoginImage"
+        android:layout_above="@+id/textPass"
         android:layout_height="wrap_content">
 
         <EditText
@@ -27,8 +29,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="top"
-            android:layout_marginLeft="50dp"
-            android:layout_marginRight="60dp"
+            android:layout_marginStart="50dp"
+            android:layout_marginEnd="60dp"
             android:hint="Nombre de usuario"
             android:inputType="textEmailAddress" />
     </android.support.design.widget.TextInputLayout>
@@ -37,15 +39,16 @@
     <android.support.design.widget.TextInputLayout
         android:id="@+id/textPass"
         android:layout_width="match_parent"
-        android:layout_below="@+id/textLogin"
+        android:layout_above="@+id/LoginButton"
+        android:layout_marginBottom="20dp"
         android:layout_height="wrap_content">
         <EditText
             android:id="@+id/pass"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="50dp"
-            android:layout_marginLeft="50dp"
-            android:layout_marginRight="50dp"
+            android:layout_marginStart="50dp"
+            android:layout_marginEnd="50dp"
             android:inputType="textPassword"
             android:layout_below="@+id/textLogin"
             android:hint="Contraseña"/>
@@ -58,7 +61,8 @@
         android:gravity="center"
         android:layout_margin="30dp"
         android:text="Login"
-        android:layout_below="@+id/textPass"
+        android:onClick="login"
+        android:layout_alignParentBottom="true"
         android:textColor="@color/white"
         android:background="@drawable/highlight_button"
         android:clickable="true"/>

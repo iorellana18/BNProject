@@ -29,8 +29,8 @@ public class mainActivity extends AppCompatActivity {
     private FeatureCoverFlow coverFlow;
     private CoverFlowAdapter adapter;
     private ArrayList<Seguro> seguros;
-    RelativeLayout siniestro;
     TextView nombre;
+    final Usuario user = (Usuario)getIntent().getSerializableExtra("user");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,23 +44,18 @@ public class mainActivity extends AppCompatActivity {
         coverFlow.setAdapter(adapter);
         coverFlow.setOnScrollPositionListener(onScrollListener());
 
-        siniestro = (RelativeLayout)findViewById(R.id.panel3);
         nombre = (TextView)findViewById(R.id.nombre);
-
-        final Usuario user = (Usuario)getIntent().getSerializableExtra("user");
-
         nombre.setText("Hola "+user.getNombre()+" "+user.getApellido()+"!");
 
-        siniestro.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(mainActivity.this,listaDenunciasActivity.class);
-                intent.putExtra("user",user);
-                startActivity(intent);
-            }
-        });
 
     }
+
+    public void alerta(View view){
+        Intent intent = new Intent(mainActivity.this,listaDenunciasActivity.class);
+        intent.putExtra("user",user);
+        startActivity(intent);
+    }
+
     private FeatureCoverFlow.OnScrollPositionListener onScrollListener() {
         return new FeatureCoverFlow.OnScrollPositionListener() {
             @Override

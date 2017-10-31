@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical" android:layout_width="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/darkGrey">
+    android:background="@color/darkGrey"
+    tools:context=".main.mainActivity">
 
     <RelativeLayout
         android:id="@+id/titleBar"
@@ -31,7 +34,7 @@
         app:coverWidth="100dp"
         app:spacing="0.6"
         android:layout_below="@+id/titleBar"
-        android:layout_alignParentStart="true" />
+        android:visibility="gone"/>
 
     <TextView
         android:id="@+id/text"
@@ -169,7 +172,8 @@
             android:layout_alignBottom="@+id/panel2"
             android:layout_width="match_parent"
             android:background="@drawable/highlight_button"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:onClick="alerta">
             <ImageView
                 android:id="@+id/image3"
                 android:layout_width="35dp"
