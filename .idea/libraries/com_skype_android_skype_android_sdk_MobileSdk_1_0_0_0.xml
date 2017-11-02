@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="com.skype.android.skype-android-sdk:MobileSdk-1.0.0.0">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.android/build-cache/683f3b6a54261bd5651031df8397ae4d24bfc44a/output/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.android/build-cache/683f3b6a54261bd5651031df8397ae4d24bfc44a/output/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
